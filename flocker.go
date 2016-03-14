@@ -17,5 +17,12 @@ func main() {
         	fmt.Printf("Could not find dataset ID")
 	}
 	fmt.Printf(id+"\n")
+
+	s, err := client.GetDatasetState(id)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Printf(s.Primary+"\n")
+	fmt.Printf(s.Path+"\n")
 }
 
